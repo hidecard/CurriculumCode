@@ -66,6 +66,8 @@ echo fruit[0];
 ?>
 
 <?php
-
-
+$arr = array(10, 20, 30);
+echo "First Element : $arr[0]";
+echo "Second Element : $arr[1]";
+echo "Third Element : $arr[2]";
 ?>
