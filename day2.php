@@ -78,3 +78,44 @@ switch ($mark) {
         break;
 }
 ?>
+
+<h1>While Loop</h1>
+<?php
+echo 1;
+echo "<br>";
+echo 2;
+echo "<br>";
+echo 3;
+echo "<br>";
+echo 4;
+echo "<br>";
+echo 5;
+echo "<br>";//Without looping
+$num = 1;
+while ($num <= 5) {
+    echo $num . "<br>";
+    $num++;
+}
+echo "<br>";
+$num = 0;
+while ($num <= 10) {
+    echo "$num x 2 = " . ($num * 2) . "<br>";
+    $num++;
+}//With Looping
+?>
+
+
+<h1>For Loop</h1>
+<?php
+$x = 10;
+for ($a = 1; $a < 10; $a++) {
+    $y = $x * $a;
+    echo "The value of number = $x x $a = $y <br>";
+}
+echo "<br>";
+$arr = array("Apple", "Orange", "Grape");
+for ($i = 0; $i < count($arr); $i++) {
+    echo $arr[$i];
+    echo "<br>";
+}
+?>
