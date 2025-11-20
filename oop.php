@@ -87,3 +87,22 @@ class Car
 $car1 = new Car();
 echo $car1->getcarModel()
     ?>
+
+<?php
+class Myclass
+{
+    public function __construct()
+    {
+        echo "Constructor called<br>";
+    }
+
+    public function __destruct()
+    {
+        echo "Destructor called";
+    }
+}
+
+$obj = new Myclass();
+?>
+
+
