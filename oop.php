@@ -106,3 +106,174 @@ $obj = new Myclass();
 ?>
 
 
+<!-- Destructor -->
+<?php
+class Demo
+{
+    public function __construct()
+    {
+        echo "Constructor called<br>";
+    }
+
+    public function __destruct()
+    {
+        echo "Destructor called";
+    }
+}
+
+$obj = new Demo();
+?>
+
+
+<!-- Inheritance -->
+<?php
+class ParentClass
+{
+    public $name = "Parent";
+
+    public function showName()
+    {
+        return $this->name;
+    }
+}
+
+class ChildClass extends ParentClass
+{
+    public function showChild()
+    {
+        return "Child class method";
+    }
+}
+
+$obj = new ChildClass();
+echo $obj->showName();
+echo $obj->showChild();
+?>
+
+<!-- Overriding Parent Methods -->
+<?php
+class ParentCar
+{
+    public function speed()
+    {
+        return "Speed: 100 km/h";
+    }
+}
+
+class ChildCar extends ParentCar
+{
+    public function speed()
+    {
+        return "Speed: 200 km/h";
+    }
+}
+
+$car = new ChildCar();
+echo $car->speed();
+?>
+
+<!-- Prevent Override Using final -->
+<?php
+class ParentCar
+{
+    final public function speed()
+    {
+        return "Speed: 150 km/h";
+    }
+}
+
+class ChildCar extends ParentCar
+{
+    // annot override final method
+}
+?>
+
+<!-- Encapsulation -->
+<?php
+class Student
+{
+    private $name;
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+}
+
+$s = new Student();
+$s->setName("Mg Mg");
+echo $s->getName();
+?>
+
+<!-- Abstract Class & Abstract Method -->
+<?php
+abstract class Car
+{
+    abstract public function calcNumMilesOnFullTank();
+}
+
+class Honda extends Car
+{
+    public function calcNumMilesOnFullTank()
+    {
+        return 500;
+    }
+}
+
+$honda = new Honda();
+echo $honda->calcNumMilesOnFullTank();
+?>
+
+<!-- Interface -->
+<?php
+interface Animal
+{
+    public function sound();
+}
+
+class Dog implements Animal
+{
+    public function sound()
+    {
+        return "Woof!";
+    }
+}
+
+$dog = new Dog();
+echo $dog->sound();
+?>
+
+<!-- Multiple Interfaces -->
+<?php
+interface A
+{
+    public function aMethod();
+}
+
+interface B
+{
+    public function bMethod();
+}
+
+class Test implements A, B
+{
+    public function aMethod()
+    {
+        return "A method";
+    }
+
+    public function bMethod()
+    {
+        return "B method";
+    }
+}
+
+$obj = new Test();
+echo $obj->aMethod();
+echo $obj->bMethod();
+?>
